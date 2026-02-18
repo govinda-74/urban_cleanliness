@@ -1,0 +1,9 @@
+              precision    recall  f1-score   support
+
+       clean      0.921     0.921     0.921        38
+      litter      0.941     0.842     0.889        38
+      medium      0.810     0.895     0.850        38
+
+    accuracy                          0.886       114
+   macro avg      0.891     0.886     0.887       114
+weighted avg      0.891     0.886     0.887       114
