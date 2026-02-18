@@ -68,3 +68,58 @@ data_split/
     ├── clean/
     ├── medium/
     └── litter/
+
+## Pretrained Model: ResNet-18 (Transfer Learning)
+
+We use **ResNet-18 pretrained on ImageNet** as the primary baseline model. 
+Instead of training from random initialization, we leverage learned visual features from a large-scale dataset (ImageNet) and adapt them to the urban cleanliness task.
+
+### Why Pretrained?
+ResNet-18 pretrained on ImageNet already learns:
+- Low-level features (edges, textures)
+- Mid-level patterns (shapes, object parts)
+- High-level semantic representations
+
+This helps the model:
+- Converge faster
+- Perform better on small datasets
+- Generalize better to unseen data
+
+---
+
+### Training Strategy (Two-Phase Fine-Tuning)
+
+We fine-tune the model in **two phases**:
+
+#### Phase 1 — Frozen Backbone
+- Freeze all convolutional layers
+- Train only the final fully connected (classification) layer
+- Learning rate: 1e-3
+- Purpose: Adapt classifier to 3 classes (Clean / Medium / Litter)
+
+#### Phase 2 — Fine-Tuning
+- Unfreeze the last residual block (layer4)
+- Train layer4 + classifier
+- Lower learning rate: 1e-4
+- Purpose: Adapt high-level features to urban cleanliness domain
+
+Model selection is based on **validation macro-F1 score**.
+
+---
+
+### Loss & Optimization
+- Loss function: Cross-Entropy Loss
+- Optimizer: Adam
+- Regularization: Weight decay (1e-4)
+- Learning rate scheduling: ReduceLROnPlateau (based on validation F1)
+
+---
+
+### Performance (Test Set)
+
+| Metric | Value |
+|--------|-------|
+| Accuracy | 0.886 |
+| Macro F1-score | 0.887 |
+
+The pretrained model significantly outperforms the model trained from scratch, demonstrating the benefit of transfer learning for small datasets.
