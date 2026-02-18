@@ -52,7 +52,7 @@ urban_cleanliness/
 └─ README.md
 
 
-## Dataset Splitting Script(split_dataset.py)
+# Dataset Splitting Script(split_dataset.py)
 After running the script, the following structure is created:
   
 data_split/
@@ -69,7 +69,7 @@ data_split/
     ├── medium/
     └── litter/
 
-## Pretrained Model: ResNet-18 (Transfer Learning)
+##Pretrained Model: ResNet-18 (Transfer Learning)
 
 We use **ResNet-18 pretrained on ImageNet** as the primary baseline model. 
 Instead of training from random initialization, we leverage learned visual features from a large-scale dataset (ImageNet) and adapt them to the urban cleanliness task.
