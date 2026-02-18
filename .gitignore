@@ -2,11 +2,13 @@
 # DATA
 
 images/
-data_split/
 
 
 # MODEL FILES
-
+runs/
+*.pt
+*.pt
+*.json
 
 
 # PYTHON CACHE
