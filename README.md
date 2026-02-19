@@ -422,3 +422,11 @@ Transfer learning using ImageNet-pretrained models has been shown to significant
 In the context of smart cities, computer vision techniques have been applied to tasks such as waste detection, urban monitoring, and environmental assessment. These systems aim to support automated cleanliness evaluation and resource allocation.
 
 To improve model transparency, explainability methods such as Grad-CAM (Selvaraju et al., 2017) visualize spatial attention maps, helping interpret CNN decisions and validate model behavior.
+
+## Poster Presentation
+
+The project poster is available below:
+
+ [Download Full Poster (PDF)](poster/poster_presentation.pdf)
+
+
