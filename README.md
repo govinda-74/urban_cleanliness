@@ -1,5 +1,9 @@
 # Urban Cleanliness Classification (Clean / Medium / Litter)
-## Labeling Criteria
+## Project idea
+
+This project aims to develop an automated system for classifying urban street images into three cleanliness categories: Clean, Medium, and Litter. The objective is to investigate whether transfer learning using a pretrained ResNet-18 model improves performance compared to training the same architecture from scratch on a relatively small dataset. In addition to quantitative evaluation using accuracy and macro F1-score, the project incorporates Grad-CAM to visualize and interpret the model’s decision-making process. By combining performance comparison and explainability analysis, the study explores both predictive accuracy and transparency in urban cleanliness classification.
+
+### Labeling Criteria
 
 Clean:
 - No visible litter on the ground
@@ -31,7 +35,7 @@ This project compares **transfer learning (pretrained on ImageNet)** vs **traini
 
 ---
 
-## Dataset
+## Dataset Drescription
 - **Source:** [Kaggle Street Classification Dataset](https://www.kaggle.com/datasets/nw8vglafd/street-classification-dataset)
 
 - **Processed dataset:** - download it from the source and reorganized manually into 3 classes as it contain some extra data also.Seperated the medium liiter images from more litter ones and created seperate class for it. 
@@ -191,7 +195,7 @@ This highlights the effectiveness of transfer learning, especially for small to 
 
 ---
 
-## Results
+## Evaluation results
 
 Model performance was evaluated on the held-out test set using Accuracy and Macro F1-score.  
 Macro F1 is reported to ensure balanced evaluation across all three classes.
